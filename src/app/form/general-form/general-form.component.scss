@@ -1,0 +1,13 @@
+@import '../../var';
+
+::ng-deep general-form-component {
+
+    display: flex;
+    justify-content: center;
+
+    textarea {
+        min-height: 300px;
+    }
+
+
+}

@@ -1,0 +1,35 @@
+<mat-card class="card">
+  <mat-card-header>
+    <div mat-card-avatar class="avatar-image"></div>
+    <mat-card-title>General</mat-card-title>
+    <mat-card-subtitle>General information about yourself</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="generalFormGroup">
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Age" formControlName="age">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Telephone" formControlName="telephone">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+      <div class="column">
+        <mat-form-field>
+          <input matInput placeholder="LinkedIn" formControlName="linkedin">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Short description"></textarea>
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-card-content>
+  <!-- <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions> -->
+</mat-card>

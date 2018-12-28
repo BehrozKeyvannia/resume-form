@@ -1,0 +1,67 @@
+@import '../var';
+
+::ng-deep form-component {
+
+    .mat-tab-label-container {
+        background-color: $c-blue;
+    }
+
+    .mat-tab-labels {
+        justify-content: center;
+    }
+
+    .mat-tab-group {
+        height: 100vh;
+        background: $c-light-blue;
+    }
+
+
+    .full-width {
+        width: 100%;
+    }
+
+    .mat-card-title,
+    .mat-card-subtitle, .matInput {
+        color: black;
+    }
+
+    .mat-form-field-flex {
+        border-bottom: 1px solid black;
+    }
+
+    input[placeholder="LinkedIn"] {
+        width: 100%;
+    }
+
+    .mat-raised-button.mat-primary {
+        background: $c-blue;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mat-form-field {
+        padding: 18px;
+        min-width: 250px;
+    }
+
+    .mat-input-element,
+    .mat-form-field-appearance-legacy .mat-form-field-label,
+    .mat-form-field-appearance-legacy .mat-form-field-underline {
+        color: black;
+    }
+
+    .card {
+        width:35%;
+        background: white;
+        margin: 60px;
+    }
+
+    .avatar-image {
+        background-image: url('http://www.carderator.com/assets/avatar_placeholder_small.png');
+        background-size: cover;
+    }
+
+}

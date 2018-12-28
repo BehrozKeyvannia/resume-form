@@ -1,0 +1,61 @@
+@import '../../var';
+
+::ng-deep education-form-component {
+
+    display: flex;
+    justify-content: center;
+
+    .expand-element {
+        background: $c-light-blue;
+    }
+
+    .mat-expansion-panel {
+        background: $c-blue;
+        margin-top: 7px;
+        &:first-child {
+            margin-top: 20px;
+        }
+        &:last-child {
+            margin-bottom: 30px;
+        }
+    }
+
+    .mat-icon-button {
+        color: $c-blue;
+    }
+
+    mat-form-field.date-field {
+        min-width: 40%;
+    }
+
+    mat-form-field textarea {
+        height: 110px;
+    }
+
+    .row {
+        display: flex;
+        width: 92%;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .mat-datepicker-content {
+        background: yellow;
+    }
+
+    .date-picker {
+        background: black;
+    }
+
+    .mat-form-field {
+        min-width: 80%;
+    }
+
+    .education-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
