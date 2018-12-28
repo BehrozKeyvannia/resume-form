@@ -12,7 +12,7 @@
             {{ e.name }}
           </mat-panel-title>
           <mat-panel-description *ngIf="e && e.fromDate && e.toDate">
-            {{ e.fromDate }} till {{ e.toDate }}
+            {{ e.fromDate | date:'MMM, yyy' }} till {{ e.toDate | date:'MMM, yyy' }}
           </mat-panel-description>
         </mat-expansion-panel-header>
         <p>{{ e.description }}</p>

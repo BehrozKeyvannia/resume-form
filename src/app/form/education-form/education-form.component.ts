@@ -69,17 +69,17 @@ export class EducationFormComponent implements OnInit {
     this.educationFormGroup.controls.toDate.setValue(ctrl);
   }
 
+  fromYearHandler(normalizedYear: Moment) {
+    const ctrl = this.educationFormGroup.controls.fromDate.value;
+    ctrl.year(normalizedYear.year());
+    this.educationFormGroup.controls.fromDate.setValue(ctrl);
+  }
+
   toMonthHandler(normlizedMonth: Moment, datepicker: MatDatepicker<Moment>, ) {
     const ctrl = this.educationFormGroup.controls.toDate.value;
     ctrl.month(normlizedMonth.month());
     this.educationFormGroup.controls.toDate.setValue(ctrl);
     datepicker.close();
-  }
-
-  fromYearHandler(normalizedYear: Moment) {
-    const ctrl = this.educationFormGroup.controls.fromDate.value;
-    ctrl.year(normalizedYear.year());
-    this.educationFormGroup.controls.fromDate.setValue(ctrl);
   }
 
   fromMonthHandler(normlizedMonth: Moment, datepicker: MatDatepicker<Moment>, ) {
