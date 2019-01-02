@@ -9,21 +9,6 @@
         background: $c-light-blue;
     }
 
-    .mat-expansion-panel {
-        background: $c-blue;
-        margin-top: 7px;
-        &:first-child {
-            margin-top: 20px;
-        }
-        &:last-child {
-            margin-bottom: 30px;
-        }
-    }
-
-    .mat-icon-button {
-        color: $c-blue;
-    }
-
     mat-form-field.date-field {
         min-width: 40%;
     }
@@ -38,10 +23,6 @@
         justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
-    }
-
-    .mat-datepicker-content {
-        background: yellow;
     }
 
     .date-picker {

@@ -12,12 +12,12 @@
             {{ e.name }}
           </mat-panel-title>
           <mat-panel-description *ngIf="e && e.fromDate && e.toDate">
-            {{ e.fromDate | date:'MMM, yyy' }} till {{ e.toDate | date:'MMM, yyy' }}
+            {{ e.fromDate | date:'MMM, yyy' }} - {{ e.toDate | date:'MMM, yyy' }}
           </mat-panel-description>
         </mat-expansion-panel-header>
         <p>{{ e.description }}</p>
         <mat-action-row>
-          <button mat-button (click)="remove(e.key)">Ta bort</button>
+          <button mat-button (click)="remove(e.key)">Remove</button>
         </mat-action-row>
       </mat-expansion-panel>
     </mat-accordion>
@@ -51,7 +51,7 @@
   <mat-form-field>
     <textarea matInput placeholder="Description" formControlName="description"></textarea>
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="add()">Lägg till</button>
+  <button mat-raised-button color="primary" (click)="add()">Add</button>
 </form>
 
 </mat-card-content>

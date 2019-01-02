@@ -6,12 +6,12 @@ import {
   Validators,
   FormGroup
 } from '@angular/forms';
-import * as _moment from 'moment';
-import { Moment } from 'moment';
+import { remove } from 'lodash';
 import {MomentDateAdapter} from '@angular/material-moment-adapter';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import {MatDatepicker} from '@angular/material/datepicker';
-import { remove } from 'lodash';
+import { Moment } from 'moment';
+import * as _moment from 'moment';
 
 export const MY_FORMATS = {
   parse: {
@@ -48,7 +48,7 @@ export class EducationFormComponent implements OnInit {
   });
 
   ngOnInit() {
-    console.warn("ed ", this.educationFormGroup);
+
   }
 
   add(){

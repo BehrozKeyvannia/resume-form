@@ -64,4 +64,19 @@
         background-size: cover;
     }
 
+    .mat-icon-button {
+        color: $c-blue;
+    }
+
+    .mat-expansion-panel {
+        background: $c-blue;
+        margin-top: 7px;
+        &:first-child {
+            margin-top: 20px;
+        }
+        &:last-child {
+            margin-bottom: 30px;
+        }
+    }
+
 }

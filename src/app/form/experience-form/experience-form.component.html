@@ -1,3 +1,65 @@
-<p>
-  experience-form works!
-</p>
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Experience</mat-card-title>
+    <mat-card-subtitle>Add your experiences below</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+
+    <mat-accordion class="expand-element">
+      <mat-expansion-panel *ngFor="let e of experiences" [expanded]="false" (opened)="false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ e.clientName }}
+          </mat-panel-title>
+          <mat-panel-description *ngIf="e && e.fromDate && e.toDate">
+            {{ e.fromDate | date:'MMM, yyy' }} - {{ e.toDate | date:'MMM, yyy' }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>Title: {{ e.title }}</p>
+        <p>Description: {{ e.description }}</p>
+        <p>Methods/Technologies: {{ e.methods }}</p>
+        <mat-action-row>
+          <button mat-button (click)="remove(e.key)">Remove</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <form [formGroup]="experienceFormGroup" class="experience-form">
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="title">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Client" formControlName="clientName">
+      </mat-form-field>
+      <div class="row">
+        <mat-form-field class="date-field">
+          <input matInput value=" " [matDatepicker]="from_dp" placeholder="From" formControlName="fromDate">
+          <mat-datepicker-toggle matSuffix [for]="from_dp"></mat-datepicker-toggle>
+          <mat-datepicker #from_dp
+          startView="multi-year"
+          (yearSelected)="fromYearHandler($event)"
+          (monthSelected)="fromMonthHandler($event, from_dp)"
+          panelClass="date-picker">
+        </mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="date-field">
+        <input matInput value=" " [matDatepicker]="to_dp" placeholder="To" formControlName="toDate">
+        <mat-datepicker-toggle matSuffix [for]="to_dp"></mat-datepicker-toggle>
+        <mat-datepicker #to_dp
+        startView="multi-year"
+        (yearSelected)="toYearHandler($event)"
+        (monthSelected)="toMonthHandler($event, to_dp)"
+        panelClass="date-picker">
+      </mat-datepicker>
+    </mat-form-field>
+  </div>
+  <mat-form-field class="mat-form-field-description">
+    <textarea matInput placeholder="Description" formControlName="description"></textarea>
+  </mat-form-field>
+  <div class="center">
+    <button mat-raised-button color="primary" (click)="add()">Add</button>
+  </div>
+</form>
+
+</mat-card-content>
+</mat-card>

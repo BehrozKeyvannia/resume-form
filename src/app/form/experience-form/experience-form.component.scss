@@ -1,0 +1,21 @@
+@import '../../var';
+
+::ng-deep experience-form-component {
+
+    display: flex;
+    justify-content: center;
+
+    mat-form-field textarea {
+        height: 110px;
+    }
+
+    .mat-form-field-description {
+        width: 91%;
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+    }
+
+}
