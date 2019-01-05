@@ -61,7 +61,13 @@ export class ExperienceFormComponent implements OnInit {
         key: this.experiences.length
     });
     this.formService.updateExperiences(this.experiences);
-    // this.experienceFormGroup.reset();
+
+    //Reset form
+    this.experienceFormGroup.controls.clientName.setValue('');
+    this.experienceFormGroup.controls.title.setValue('');
+    this.experienceFormGroup.controls.toDate.setValue(_moment());
+    this.experienceFormGroup.controls.fromDate.setValue(_moment());
+    this.experienceFormGroup.controls.description.setValue('');
   }
 
   remove(key: string){
