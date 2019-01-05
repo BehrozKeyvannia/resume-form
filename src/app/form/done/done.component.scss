@@ -1,0 +1,12 @@
+@import '../../var';
+
+::ng-deep done-component {
+
+    display: flex;
+    justify-content: center;
+
+    .btn-center {
+        margin: auto;
+    }
+
+}

@@ -1,3 +1,4 @@
+import { FormService } from './../form.service';
 import { Component, OnInit } from '@angular/core';
 import {
   FormControl,
@@ -12,6 +13,7 @@ import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/
 import {MatDatepicker} from '@angular/material/datepicker';
 import { Moment } from 'moment';
 import * as _moment from 'moment';
+
 
 export const MY_FORMATS = {
   parse: {
@@ -36,7 +38,9 @@ export const MY_FORMATS = {
 })
 export class EducationFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private formService: FormService
+  ) { }
 
   educations: object[] = [];
 
@@ -56,6 +60,7 @@ export class EducationFormComponent implements OnInit {
         ...this.educationFormGroup.value,
         key: this.educations.length
     });
+    this.formService.updateEducations(this.educations);
     this.educationFormGroup.reset();
   }
 

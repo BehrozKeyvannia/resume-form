@@ -1,5 +1,9 @@
+import { FormService } from './../form.service';
 import { Component, OnInit } from '@angular/core';
-
+import {
+  FormControl,
+  FormGroup
+} from '@angular/forms';
 @Component({
   selector: 'misc-form-component',
   templateUrl: './misc-form.component.html',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MiscFormComponent implements OnInit {
 
-  constructor() { }
+  miscFormGroup = new FormGroup({
+    misc: new FormControl('')
+  });
+
+  constructor(
+    private formService: FormService
+  ) { }
 
   ngOnInit() {
+    this.miscFormGroup.valueChanges.subscribe(misc => this.formService.updateMisc(misc));
   }
+
 
 }

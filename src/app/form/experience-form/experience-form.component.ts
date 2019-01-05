@@ -1,3 +1,4 @@
+import { FormService } from './../form.service';
 import { Component, OnInit } from '@angular/core';
 import {
   FormControl,
@@ -37,7 +38,9 @@ export const MY_FORMATS = {
 
 export class ExperienceFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private formService: FormService
+  ) { }
 
   experiences: object[] = [];
 
@@ -57,6 +60,7 @@ export class ExperienceFormComponent implements OnInit {
         ...this.experienceFormGroup.value,
         key: this.experiences.length
     });
+    this.formService.updateExperiences(this.experiences);
     this.experienceFormGroup.reset();
   }
 

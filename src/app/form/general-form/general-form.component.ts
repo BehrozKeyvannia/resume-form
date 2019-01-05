@@ -7,6 +7,7 @@ import {
   Validators,
   FormGroup
 } from '@angular/forms';
+import { FormService } from './../form.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 // export class ErrorMatcher implements ErrorStateMatcher {
@@ -23,7 +24,9 @@ import {
 })
 export class GeneralFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private formService: FormService
+  ) { }
 
   generalFormGroup = new FormGroup({
       name: new FormControl(''),
@@ -37,6 +40,7 @@ export class GeneralFormComponent implements OnInit {
   // matcher = new ErrorMatcher();
 
   ngOnInit() {
+    this.generalFormGroup.valueChanges.subscribe(generalForm => this.formService.updateGeneral(generalForm));
   }
 
 }

@@ -10,14 +10,16 @@ import { GeneralFormComponent } from './form/general-form/general-form.component
 import { EducationFormComponent } from './form/education-form/education-form.component';
 import { ExperienceFormComponent } from './form/experience-form/experience-form.component';
 import { MiscFormComponent } from './form/misc-form/misc-form.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatButtonModule} from '@angular/material/button';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatButtonModule } from '@angular/material/button';
+import { ReferencesFormComponent } from './form/references-form/references-form.component';
+import { DoneComponent } from './form/done/done.component';
+import { FormService } from './form/form.service';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import {MatButtonModule} from '@angular/material/button';
     EducationFormComponent,
     ExperienceFormComponent,
     MiscFormComponent,
+    ReferencesFormComponent,
+    DoneComponent
   ],
   imports: [
     BrowserModule,

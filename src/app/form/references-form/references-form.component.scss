@@ -1,0 +1,13 @@
+@import '../../var';
+
+::ng-deep references-form-component {
+
+    display: flex;
+    justify-content: center;
+
+    .reference-form {
+        display: flex;
+        padding: 20px;
+    }
+
+}
