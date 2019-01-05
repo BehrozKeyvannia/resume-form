@@ -61,7 +61,7 @@ export class EducationFormComponent implements OnInit {
         key: this.educations.length
     });
     this.formService.updateEducations(this.educations);
-    this.educationFormGroup.reset();
+    // this.educationFormGroup.reset();
   }
 
   remove(key: string){
