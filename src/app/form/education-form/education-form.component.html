@@ -26,36 +26,31 @@
       <mat-form-field>
         <input matInput placeholder="Name" formControlName="name">
       </mat-form-field>
-      <div class="row">
-        <mat-form-field class="date-field">
-          <input matInput value=" " [matDatepicker]="from_dp" placeholder="From" formControlName="fromDate">
-          <mat-datepicker-toggle matSuffix [for]="from_dp"></mat-datepicker-toggle>
-          <mat-datepicker #from_dp
-          startView="multi-year"
-          (yearSelected)="fromYearHandler($event)"
-          (monthSelected)="fromMonthHandler($event, from_dp)"
+      <mat-form-field class="date-field">
+        <input matInput value=" " [matDatepicker]="from_dp" placeholder="From" formControlName="fromDate">
+        <mat-datepicker-toggle matSuffix [for]="from_dp"></mat-datepicker-toggle>
+        <mat-datepicker #from_dp startView="multi-year" (yearSelected)="fromYearHandler($event)" (monthSelected)="fromMonthHandler($event, from_dp)"
           panelClass="date-picker">
         </mat-datepicker>
       </mat-form-field>
       <mat-form-field class="date-field">
         <input matInput value=" " [matDatepicker]="to_dp" placeholder="To" formControlName="toDate">
         <mat-datepicker-toggle matSuffix [for]="to_dp"></mat-datepicker-toggle>
-        <mat-datepicker #to_dp
-        startView="multi-year"
-        (yearSelected)="toYearHandler($event)"
-        (monthSelected)="toMonthHandler($event, to_dp)"
-        panelClass="date-picker">
-      </mat-datepicker>
-    </mat-form-field>
-  </div>
-  <mat-form-field>
-    <textarea matInput placeholder="Description" formControlName="description"></textarea>
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="add()">Add</button>
-</form>
+        <mat-datepicker #to_dp startView="multi-year" (yearSelected)="toYearHandler($event)" (monthSelected)="toMonthHandler($event, to_dp)"
+          panelClass="date-picker">
+        </mat-datepicker>
+      </mat-form-field>
+      <mat-checkbox formControlName="current">
+        Current
+      </mat-checkbox>
+      <mat-form-field>
+        <textarea matInput placeholder="Description" formControlName="description"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="add()">Add</button>
+    </form>
 
-</mat-card-content>
-<!-- <mat-card-actions>
+  </mat-card-content>
+  <!-- <mat-card-actions>
   <button mat-button>LIKE</button>
   <button mat-button>SHARE</button>
 </mat-card-actions> -->

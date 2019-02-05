@@ -29,7 +29,8 @@ export class GeneralFormComponent implements OnInit {
   ) { }
 
   generalFormGroup = new FormGroup({
-      name: new FormControl(''),
+      firstname: new FormControl(''),
+      lastname: new FormControl(''),
       age: new FormControl(''),
       telephone: new FormControl(''),
       email: new FormControl(''),

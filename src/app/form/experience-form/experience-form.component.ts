@@ -49,10 +49,12 @@ export class ExperienceFormComponent implements OnInit {
     title: new FormControl(''),
     toDate: new FormControl(_moment()),
     fromDate: new FormControl(_moment()),
+    current: new FormControl(false),
     description: new FormControl(''),
   });
 
   ngOnInit() {
+
   }
 
   add(){

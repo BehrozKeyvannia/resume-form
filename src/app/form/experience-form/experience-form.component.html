@@ -31,35 +31,30 @@
       <mat-form-field>
         <input matInput placeholder="Client" formControlName="clientName">
       </mat-form-field>
-      <div class="row">
-        <mat-form-field class="date-field">
-          <input matInput value=" " [matDatepicker]="from_dp" placeholder="From" formControlName="fromDate">
-          <mat-datepicker-toggle matSuffix [for]="from_dp"></mat-datepicker-toggle>
-          <mat-datepicker #from_dp
-          startView="multi-year"
-          (yearSelected)="fromYearHandler($event)"
-          (monthSelected)="fromMonthHandler($event, from_dp)"
+      <mat-form-field class="date-field">
+        <input matInput value=" " [matDatepicker]="from_dp" placeholder="From" formControlName="fromDate">
+        <mat-datepicker-toggle matSuffix [for]="from_dp"></mat-datepicker-toggle>
+        <mat-datepicker #from_dp startView="multi-year" (yearSelected)="fromYearHandler($event)" (monthSelected)="fromMonthHandler($event, from_dp)"
           panelClass="date-picker">
         </mat-datepicker>
       </mat-form-field>
       <mat-form-field class="date-field">
         <input matInput value=" " [matDatepicker]="to_dp" placeholder="To" formControlName="toDate">
         <mat-datepicker-toggle matSuffix [for]="to_dp"></mat-datepicker-toggle>
-        <mat-datepicker #to_dp
-        startView="multi-year"
-        (yearSelected)="toYearHandler($event)"
-        (monthSelected)="toMonthHandler($event, to_dp)"
-        panelClass="date-picker">
-      </mat-datepicker>
-    </mat-form-field>
-  </div>
-  <mat-form-field class="mat-form-field-description">
-    <textarea matInput placeholder="Description" formControlName="description"></textarea>
-  </mat-form-field>
-  <div class="center">
-    <button mat-raised-button color="primary" (click)="add()">Add</button>
-  </div>
-</form>
+        <mat-datepicker #to_dp startView="multi-year" (yearSelected)="toYearHandler($event)" (monthSelected)="toMonthHandler($event, to_dp)"
+          panelClass="date-picker">
+        </mat-datepicker>
+      </mat-form-field>
+      <mat-checkbox formControlName="current">
+        Current
+      </mat-checkbox>
+      <mat-form-field class="mat-form-field-description">
+        <textarea matInput placeholder="Description" formControlName="description"></textarea>
+      </mat-form-field>
+      <div class="center">
+        <button mat-raised-button color="primary" (click)="add()">Add</button>
+      </div>
+    </form>
 
-</mat-card-content>
+  </mat-card-content>
 </mat-card>

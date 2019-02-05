@@ -43,11 +43,13 @@ export class EducationFormComponent implements OnInit {
   ) { }
 
   educations: object[] = [];
+  checkbox: boolean = false;
 
   educationFormGroup = new FormGroup({
     name: new FormControl(''),
     toDate: new FormControl(_moment()),
     fromDate: new FormControl(_moment()),
+    current: new FormControl(false),
     description: new FormControl(''),
   });
 

@@ -16,6 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { ReferencesFormComponent } from './form/references-form/references-form.component';
 import { DoneComponent } from './form/done/done.component';
@@ -44,7 +45,8 @@ import { FormService } from './form/form.service';
     MatExpansionModule,
     MatIconModule,
     MatDatepickerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCheckboxModule
   ],
   providers: [
 

@@ -13,6 +13,10 @@
         width: 91%;
     }
 
+    .mat-form-field.date-field {
+        min-width: 180px;
+    }
+
     .center {
         display: flex;
         justify-content: center;

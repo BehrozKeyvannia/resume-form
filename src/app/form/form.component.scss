@@ -20,7 +20,8 @@
         width: 100%;
     }
 
-    .mat-card-title,
+
+    .mat-card, .mat-card-title,
     .mat-card-subtitle, .matInput {
         color: black;
     }
@@ -79,4 +80,17 @@
         }
     }
 
+    .mat-checkbox-background {
+        background-color: white !important;
+    }
+
+    .mat-checkbox-inner-container {
+        border: solid $c-blue 1px;
+    }
+
+    .mat-checkbox {
+        path {
+            stroke: $c-blue !important;
+        }
+    }
 }

@@ -10,7 +10,11 @@
     }
 
     mat-form-field.date-field {
-        min-width: 40%;
+        min-width: 20%;
+    }
+
+    .mat-form-field {
+        padding: 15px;
     }
 
     mat-form-field textarea {
@@ -38,5 +42,4 @@
         flex-direction: column;
         align-items: center;
     }
-
 }
