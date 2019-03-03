@@ -35,7 +35,6 @@ export const MY_FORMATS = {
   ]
 })
 
-
 export class ExperienceFormComponent implements OnInit {
 
   constructor(
@@ -43,6 +42,7 @@ export class ExperienceFormComponent implements OnInit {
   ) { }
 
   experiences: object[] = [];
+  toDateDisabled: boolean = false;
 
   experienceFormGroup = new FormGroup({
     clientName: new FormControl(''),
@@ -54,7 +54,9 @@ export class ExperienceFormComponent implements OnInit {
   });
 
   ngOnInit() {
-
+    this.formService.formDataSubject.subscribe(
+      update => this.experienceFormGroup.patchValue(update.experiences)
+    )
   }
 
   add(){
@@ -93,6 +95,14 @@ export class ExperienceFormComponent implements OnInit {
     ctrl.month(normlizedMonth.month());
     this.experienceFormGroup.controls.toDate.setValue(ctrl);
     datepicker.close();
+  }
+
+  currentClicked() {
+    if (!this.experienceFormGroup.value.current) {
+      this.experienceFormGroup.get('toDate').disable();
+    } else {
+      this.experienceFormGroup.get('toDate').enable();
+    }
   }
 
   fromMonthHandler(normlizedMonth: Moment, datepicker: MatDatepicker<Moment>, ) {

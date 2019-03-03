@@ -42,6 +42,11 @@ export class GeneralFormComponent implements OnInit {
 
   ngOnInit() {
     this.generalFormGroup.valueChanges.subscribe(generalForm => this.formService.updateGeneral(generalForm));
+    this.formService.formDataSubject.subscribe(
+      update => {
+        this.generalFormGroup.patchValue(update.general)
+      }
+    )
   }
 
 }

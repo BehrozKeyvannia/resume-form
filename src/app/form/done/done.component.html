@@ -1,5 +1,34 @@
 <mat-card class="card">
     <mat-card-header>
-        <button mat-raised-button class="btn-center" color="primary" (click)="createJsonFile()">DOWNLOAD</button>
+        <div>
+            <button
+                mat-raised-button
+                class="btn-center"
+                color="primary"
+                [disabled]="!idExists"
+                (click)="editProfile()">
+                SAVE
+            </button>
+        </div>
+        <div>
+            <button
+                mat-raised-button
+                class="btn-center"
+                color="primary"
+                [disabled]="idExists"
+                (click)="createProfile()">
+                CREATE NEW
+            </button>
+        </div>
+        <div>
+            <button
+                mat-raised-button
+                [disabled]="!idExists"
+                class="btn-center"
+                color="red"
+                (click)="deleteProfile()">
+                DELETE
+            </button>
+        </div>
     </mat-card-header>
-  </mat-card>
+</mat-card>

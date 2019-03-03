@@ -25,7 +25,9 @@ export class ReferencesFormComponent implements OnInit {
   });
 
   ngOnInit() {
-
+    this.formService.formDataSubject.subscribe(
+      update => this.referenceFormGroup.patchValue(update.educations)
+    )
   }
 
   add(){

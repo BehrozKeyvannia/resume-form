@@ -12,12 +12,46 @@ export class DoneComponent implements OnInit {
     private formService: FormService
   ) { }
 
+  idExists: boolean;
+
   ngOnInit() {
-
+    this.formService.formDataSubject.subscribe(
+      formData => {
+        this.idExists = formData.id ? true : false;
+      }
+    )
   }
 
-  createJsonFile() {
-    this.formService.saveJsonFile();
+  editProfile() {
+    this.formService.editResume().subscribe(
+      success => {
+        console.warn("success: " , success);
+        window.location.reload();
+      },
+      error => {
+        console.warn("error: " , error);
+      }
+    );
   }
 
+  deleteProfile() {
+    this.formService.deleteResume().subscribe(
+      success => {
+        console.warn("success: " , success);
+        window.location.reload();
+      },
+      error => {
+        console.warn("error: " , error);
+      }
+    );
+  }
+
+  createProfile() {
+    this.formService.createResume().subscribe(
+      response => {
+        console.warn("created: ", response);
+        this.idExists = response.id ? true : false;
+      }
+    )
+  }
 }

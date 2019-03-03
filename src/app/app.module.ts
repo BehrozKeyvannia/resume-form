@@ -18,9 +18,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 import { ReferencesFormComponent } from './form/references-form/references-form.component';
 import { DoneComponent } from './form/done/done.component';
 import { FormService } from './form/form.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { FormService } from './form/form.service';
     MatIconModule,
     MatDatepickerModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    HttpClientModule,
+    MatSelectModule
   ],
   providers: [
 

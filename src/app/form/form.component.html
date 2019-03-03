@@ -1,6 +1,16 @@
+<mat-form-field class="select-profiles">
+  <mat-select (selectionChange)="profileChanged($event)" placeholder="Select profile">
+    <mat-option value="new_profile">
+      New profile
+    </mat-option>
+    <mat-option *ngFor="let profile of allProfiles" [value]="profile">
+      {{ profile.general.firstname }} {{ profile.general.lastname }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 <mat-tab-group>
   <mat-tab label="General">
-      <general-form-component></general-form-component>
+    <general-form-component></general-form-component>
   </mat-tab>
 
   <mat-tab label="Education">

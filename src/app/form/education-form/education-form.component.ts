@@ -47,14 +47,16 @@ export class EducationFormComponent implements OnInit {
 
   educationFormGroup = new FormGroup({
     name: new FormControl(''),
-    toDate: new FormControl(_moment()),
     fromDate: new FormControl(_moment()),
+    toDate: new FormControl({ value: _moment(), disabled: false }),
     current: new FormControl(false),
     description: new FormControl(''),
   });
 
   ngOnInit() {
-
+    this.formService.formDataSubject.subscribe(
+      update => this.educationFormGroup.patchValue(update.educations)
+    )
   }
 
   add(){
@@ -69,6 +71,14 @@ export class EducationFormComponent implements OnInit {
     this.educationFormGroup.controls.toDate.setValue(_moment());
     this.educationFormGroup.controls.fromDate.setValue(_moment());
     this.educationFormGroup.controls.description.setValue('');
+  }
+
+  currentClicked() {
+    if (!this.educationFormGroup.value.current) {
+      this.educationFormGroup.get('toDate').disable();
+    } else {
+      this.educationFormGroup.get('toDate').enable();
+    }
   }
 
   remove(key: string){

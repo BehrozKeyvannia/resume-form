@@ -40,7 +40,7 @@
           panelClass="date-picker">
         </mat-datepicker>
       </mat-form-field>
-      <mat-checkbox formControlName="current">
+      <mat-checkbox (click)="currentClicked()" formControlName="current">
         Current
       </mat-checkbox>
       <mat-form-field>
