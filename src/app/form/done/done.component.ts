@@ -48,7 +48,7 @@ export class DoneComponent implements OnInit {
 
   createProfile() {
     this.formService.createResume().subscribe(
-      response => {
+      (response: any) => {
         console.warn("created: ", response);
         this.idExists = response.id ? true : false;
       }

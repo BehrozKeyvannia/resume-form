@@ -52,7 +52,7 @@ export class FormService {
     saveAs(data, `${get(this.formData, 'general.name') || 'person'}.json`);
   }
 
-  updateForm(formData: object) {
+  updateForm(formData) {
     this.currentId = formData.id || '';
     this.formDataSubject.next(formData);
   }
