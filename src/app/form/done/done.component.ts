@@ -25,11 +25,10 @@ export class DoneComponent implements OnInit {
   editProfile() {
     this.formService.editResume().subscribe(
       success => {
-        console.warn("success: " , success);
         window.location.reload();
       },
       error => {
-        console.warn("error: " , error);
+        console.warn("error: ", error);
       }
     );
   }
@@ -37,11 +36,10 @@ export class DoneComponent implements OnInit {
   deleteProfile() {
     this.formService.deleteResume().subscribe(
       success => {
-        console.warn("success: " , success);
         window.location.reload();
       },
       error => {
-        console.warn("error: " , error);
+        console.warn("error: ", error);
       }
     );
   }
@@ -51,7 +49,8 @@ export class DoneComponent implements OnInit {
       (response: any) => {
         console.warn("created: ", response);
         this.idExists = response.id ? true : false;
+        window.location.reload();
       }
-    )
+    );
   }
 }
