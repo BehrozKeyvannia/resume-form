@@ -55,8 +55,14 @@ export class ExperienceFormComponent implements OnInit {
 
   ngOnInit() {
     this.formService.formDataSubject.subscribe(
-      update => this.experienceFormGroup.patchValue(update.experiences)
-    )
+      update => {
+        update.experiences.map((element, index) => {
+          this.experiences.push({
+            ...element,
+            key: index
+          });
+        });
+      });
   }
 
   add(){

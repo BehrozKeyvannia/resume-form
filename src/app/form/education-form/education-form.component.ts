@@ -8,9 +8,9 @@ import {
   FormGroup
 } from '@angular/forms';
 import { remove } from 'lodash';
-import {MomentDateAdapter} from '@angular/material-moment-adapter';
-import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
-import {MatDatepicker} from '@angular/material/datepicker';
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatDatepicker } from '@angular/material/datepicker';
 import { Moment } from 'moment';
 import * as _moment from 'moment';
 
@@ -32,8 +32,8 @@ export const MY_FORMATS = {
   templateUrl: './education-form.component.html',
   styleUrls: ['./education-form.component.scss'],
   providers: [
-    {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
-    {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},
+    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
   ]
 })
 export class EducationFormComponent implements OnInit {
@@ -55,14 +55,20 @@ export class EducationFormComponent implements OnInit {
 
   ngOnInit() {
     this.formService.formDataSubject.subscribe(
-      update => this.educationFormGroup.patchValue(update.educations)
-    )
+      update => {
+        update.educations.map((element, index) => {
+          this.educations.push({
+            ...element,
+            key: index
+          });
+        });
+      })
   }
 
-  add(){
+  add() {
     this.educations.push({
-        ...this.educationFormGroup.value,
-        key: this.educations.length
+      ...this.educationFormGroup.value,
+      key: this.educations.length
     });
     this.formService.updateEducations(this.educations);
 
@@ -81,7 +87,7 @@ export class EducationFormComponent implements OnInit {
     }
   }
 
-  remove(key: string){
+  remove(key: string) {
     remove(this.educations, element => element.key === key);
   }
 

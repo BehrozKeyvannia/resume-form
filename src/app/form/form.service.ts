@@ -54,6 +54,7 @@ export class FormService {
 
   updateForm(formData) {
     this.currentId = formData.id || '';
+    this.formData = formData;
     this.formDataSubject.next(formData);
   }
 
