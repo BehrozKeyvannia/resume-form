@@ -56,12 +56,14 @@ export class EducationFormComponent implements OnInit {
   ngOnInit() {
     this.formService.formDataSubject.subscribe(
       update => {
-        update.educations.map((element, index) => {
-          this.educations.push({
-            ...element,
-            key: index
+        if (update.educations.length > 0) {
+          update.educations.map((element, index) => {
+            this.educations.push({
+              ...element,
+              key: index
+            });
           });
-        });
+        }
       })
   }
 

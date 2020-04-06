@@ -128,5 +128,9 @@ export class FormService {
     return this.http.get(this.api + 'resume/get-all');
   }
 
+  get(id) {
+    return this.http.get(this.api + `resume/get/${id}`);
+  }
+
 
 }

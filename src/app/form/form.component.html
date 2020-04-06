@@ -4,7 +4,7 @@
       New profile
     </mat-option>
     <mat-option *ngFor="let profile of allProfiles" [value]="profile">
-      {{ profile.general.firstname }} {{ profile.general.lastname }}
+      {{ profile.firstname }} {{ profile.lastname }}
     </mat-option>
   </mat-select>
 </mat-form-field>
