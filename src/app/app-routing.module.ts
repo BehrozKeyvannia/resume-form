@@ -3,12 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormComponent } from './form/form.component';
 
 const routes: Routes = [
-  { path: '**', component: FormComponent  },
-  { path: 'users/:idx', component: FormComponent  }
+  { path: 'users', component: FormComponent  },
+  { path: 'users/:id', component: FormComponent  },
+  { path: '**', redirectTo:"users"  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

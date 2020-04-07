@@ -2,8 +2,13 @@
 
 ::ng-deep form-component {
 
-    .mat-tab-label-container {
+    .mat-tab-label-container, .menu-background {
         background-color: $c-blue;
+    }
+
+    .selected-user-button {
+        color: white;
+        font-size: 18px;
     }
 
     .mat-tab-labels {

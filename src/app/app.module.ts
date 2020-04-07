@@ -19,6 +19,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import {MatMenuModule} from '@angular/material/menu';
 import { ReferencesFormComponent } from './form/references-form/references-form.component';
 import { DoneComponent } from './form/done/done.component';
 import { FormService } from './form/form.service';
@@ -50,7 +51,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatCheckboxModule,
     HttpClientModule,
-    MatSelectModule
+    MatSelectModule,
+    MatMenuModule
   ],
   providers: [
 

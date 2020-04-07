@@ -1,5 +1,5 @@
-<mat-form-field class="select-profiles">
-  <mat-select (selectionChange)="profileChanged($event)" placeholder="Select profile">
+<!-- <mat-form-field class="select-profiles">
+  <mat-select name="SelectUser" [formControl]="selected" (selectionChange)="profileChanged($event)" placeholder="Select profile">
     <mat-option value="new_profile">
       New profile
     </mat-option>
@@ -7,7 +7,14 @@
       {{ profile.firstname }} {{ profile.lastname }}
     </mat-option>
   </mat-select>
-</mat-form-field>
+</mat-form-field> -->
+<div class="menu-background">
+    <button class="selected-user-button" mat-button [matMenuTriggerFor]="menu">{{ selected }}</button>
+    <mat-menu #menu="matMenu">
+      <button (click)="newProfilePressed()" mat-menu-item> New profile </button>
+      <button *ngFor="let profile of allProfiles" (click)="userProfilePressed(profile.id)" mat-menu-item> {{ profile.firstname }} {{ profile.lastname }} </button>
+    </mat-menu>
+</div>
 <mat-tab-group>
   <mat-tab label="General">
     <general-form-component></general-form-component>

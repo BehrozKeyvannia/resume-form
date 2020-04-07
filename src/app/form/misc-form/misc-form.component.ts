@@ -22,7 +22,11 @@ export class MiscFormComponent implements OnInit {
   ngOnInit() {
     this.miscFormGroup.valueChanges.subscribe(misc => this.formService.updateMisc(misc));
     this.formService.formDataSubject.subscribe(
-      update => this.miscFormGroup.patchValue(update.misc)
+      update => { 
+        if (update.misc && update.misc.misc) {
+          this.miscFormGroup.patchValue(update.misc)
+        }
+      }
     )
   }
 
